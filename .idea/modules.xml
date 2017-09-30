@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Downloads-j62056.iml" filepath="$PROJECT_DIR$/.idea/modules/Downloads-j62056.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j62056.iml" filepath="$PROJECT_DIR$/j62056.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/j62056_itest.iml" filepath="$PROJECT_DIR$/.idea/modules/j62056_itest.iml" group="j62056" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/j62056_main.iml" filepath="$PROJECT_DIR$/.idea/modules/j62056_main.iml" group="j62056" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/j62056_sample.iml" filepath="$PROJECT_DIR$/.idea/modules/j62056_sample.iml" group="j62056" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/j62056_test.iml" filepath="$PROJECT_DIR$/.idea/modules/j62056_test.iml" group="j62056" />
+    </modules>
+  </component>
+</project>
