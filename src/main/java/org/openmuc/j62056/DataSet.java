@@ -20,12 +20,13 @@
  */
 package org.openmuc.j62056;
 
-import java.io.DataInputStream;
-import java.io.IOException;
-
 import org.openmuc.j62056.internal.Bcc;
 import org.openmuc.j62056.internal.Helper;
 import org.openmuc.j62056.internal.HexConverter;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
  * 
@@ -43,10 +44,23 @@ public class DataSet {
 
     private static final int BUFFER_LENGTH = 100;
 
-    private DataSet(String id, String value, String unit) {
+    public DataSet(String id, String value, String unit) {
         this.address = id;
         this.value = value;
         this.unit = unit;
+    }
+
+    public void send(DataOutputStream os, Bcc bcc) throws IOException {
+        Helper.writeCharsAndCalculateBcc(
+                address == null ? "" : address, os, bcc
+        );
+        Helper.writeCharsAndCalculateBcc(
+                "(" + (value == null ? "" : value), os, bcc
+        );
+        Helper.writeCharsAndCalculateBcc(
+                unit == null || unit.isEmpty() ? ")" : "*" + unit + ")", os, bcc
+        );
+        os.flush();
     }
 
     static DataSet readDataSet(DataInputStream is, Bcc bcc) throws IOException {
