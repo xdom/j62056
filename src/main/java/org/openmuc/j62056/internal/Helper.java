@@ -21,6 +21,7 @@
 package org.openmuc.j62056.internal;
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
@@ -47,5 +48,18 @@ public class Helper {
         byte b = is.readByte();
         bcc.value ^= b;
         return b;
+    }
+
+    public static void writeByteAndCalculateBcc(byte b, DataOutputStream os, Bcc bcc) throws IOException {
+        os.write(b);
+        bcc.value ^= b;
+    }
+
+    public static void writeCharsAndCalculateBcc(String chars, DataOutputStream os, Bcc bcc) throws IOException {
+        byte[] bytes = chars.getBytes(Helper.ASCII_CHARSET);
+        for (byte b : bytes) {
+            os.write(b);
+            bcc.value ^= b;
+        }
     }
 }
