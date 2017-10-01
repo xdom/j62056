@@ -63,7 +63,7 @@ public class DataSet {
         os.flush();
     }
 
-    static DataSet readDataSet(DataInputStream is, Bcc bcc) throws IOException {
+    public static DataSet readDataSet(DataInputStream is, Bcc bcc) throws IOException {
 
         byte b = Helper.readByteAndCalculateBcc(is, bcc);
         if (b == '\r') {
