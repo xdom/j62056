@@ -60,7 +60,6 @@ public class DataSet {
         Helper.writeCharsAndCalculateBcc(
                 unit == null || unit.isEmpty() ? ")" : "*" + unit + ")", os, bcc
         );
-        os.flush();
     }
 
     public static DataSet readDataSet(DataInputStream is, Bcc bcc) throws IOException {
